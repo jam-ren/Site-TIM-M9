@@ -1,0 +1,121 @@
+#accueil {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10vh;
+
+    #titres-accueil {
+        width: 100%;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-family: $police__B612-regular;
+        font-weight: 700;
+        font-size: 5vw;
+        margin: 0;
+        padding-top: 1vh;
+    }
+
+    p {
+        width: 40vw;
+        margin-top: 1vh;
+        font-family: $police__roboto-condensed;
+        font-size: 1.1em;
+    }
+
+
+
+    ul {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        font-family: $police__B612-mono;
+        font-size: .75em;
+        text-transform: uppercase;
+        margin-top: 15vh;
+    
+    }
+
+    li {
+        margin-right: 2vw;
+
+        &:hover {
+            transition: .5s;
+            color: $couleur__orange;
+            cursor: pointer;
+        }
+    }
+
+    img {
+
+        min-width: 50%;
+        max-width: 100%; 
+        width:100%;     
+    }
+
+    .conteneur-diaporama {
+        max-width: 1000px;
+        position: relative;
+        margin: auto
+    }
+    
+    .ma-diapo {
+        display: none;
+        height: 100%;
+    }
+    
+    .li-carrousel {
+        color:white;
+    }
+    
+    .active,
+    .li-carrousel:hover {
+        color: $couleur__orange;
+        font-weight: 900;
+    }
+    
+    @media (max-width:520px) {
+        p {
+            width:100%;
+            font-size: 1em;
+            line-height: 1.4em;
+            padding-top: 1em;
+            padding-left: 0.5em;
+        }
+
+        h1 {
+            font-size: 3em;
+            padding-top: 8vh;
+            padding-left: 0.2em;
+        }
+
+        .conteneur-diaporama {
+            display: none;
+        }
+
+        ul {
+            display: none;
+            
+        }
+    }
+
+    @media (min-width:521px) and (max-width:920px) {
+        p {
+            width: 100%;
+        }
+
+        h1 {
+            padding-top: 10vh;
+            font-size: 8vw;
+        }
+
+        .conteneur-diaporama {
+            display: none;
+        }
+
+        ul {
+            display: none;
+            
+        }
+    }
+}

@@ -1,0 +1,212 @@
+#professeurs {
+    padding-top: 10vh;
+    
+    .titre-section {
+        display: flex;
+        justify-content: start;
+        height: 3em;
+        line-height: 3em;
+
+        h1 {
+            font-family: $police__B612-regular;
+            font-weight: 700;
+            color: $couleur__orange;
+            text-transform: uppercase;
+            margin: .5em auto;
+        }
+    
+        hr {
+            border: 1px $couleur__orange solid;
+            width: 90%;
+            height: 0;
+            margin: 2.1em 0 0 2em;
+        }
+    }
+
+    #menu-profs {
+            font-family: $police__B612-mono;
+            text-transform: uppercase;
+            font-size: .8em;
+
+            li {
+                padding-right: 3vw;
+                margin-top: 2vh;
+                opacity: .85;
+
+                &:hover {
+                    opacity: 1;
+                    color: $couleur__orange;
+                    font-weight: 700;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
+            }
+
+            .volet-actif {
+                font-weight: 700;
+                transition: .5s;
+                opacity: 1;
+                color: $couleur__jaune;
+            }
+    }   
+    
+    .profs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 8vh auto;
+
+        li:nth-child(-n+4) {
+            display: flex;
+        }
+
+        .prof {
+            display: none;
+            justify-content: flex-start;
+            margin: 0 0 1vh .5em;
+            padding: .5em;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .visage-prof {
+                box-shadow: -3px 5px 20px 0.5px rgba(0, 0, 0, 0.25);
+            }
+
+            .details {
+                padding-left: 4vw;
+                margin-top: 0;
+            }
+
+            h2 {
+                text-transform: uppercase;
+                margin-bottom: 0;
+            }
+
+            h3 {
+                font-weight: 500;
+                color: $couleur__jaune;
+                margin-top: 0;
+            }
+
+            .logoProfs {
+                margin-top: 5em !important; 
+            }
+
+            p {
+                width: 90%;
+            }
+            
+            a {
+                text-decoration: none;
+                color: white;
+                width: 90%;
+            }
+        }
+    }
+
+    .profs ~ .profs {
+        display: none;
+    }
+
+    .couleur-BG {
+        background-color: $couleur__bleu-pale;
+    }
+
+    #voir-plus {
+        font-weight: 500;
+        color: $couleur__orange;
+        display: flex;
+        justify-content: center;
+
+        &:hover {
+            font-weight: 900;
+            color: $couleur__jaune;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        &::after {
+            content: 'voir plus';
+        }
+    }
+
+    #voir-plus.clique::after {
+        content: 'voir moins';
+    }
+
+    .clique {
+        color: $couleur__jaune !important;
+    }
+
+    /* Début de styles mobiles */
+    @media (max-width:520px) {
+        .profs {
+            grid-template-columns: 1fr;
+            margin: 6vh auto 0vh auto;
+            
+            .prof {
+                padding: .75em 0;
+                margin: 0 0 1vh 0em;
+                
+                h2 {
+                    font-size: 1.3em;
+                }
+
+                h3 {
+                    font-size: 1em;
+                }
+
+                .desc-courte {
+                    display: none;
+                }
+
+                .visage-logo .logo-profs {
+                width: 40%;
+                position: absolute;
+                margin-top: 75%;
+                }
+
+                .visage-logo .visage-prof {
+                    height: 80px;
+                }
+            }
+        }
+
+        .menu-deroulant {
+            display: flex;
+            justify-content: center;
+        }
+
+        #menu-profs {
+            display: none;
+        }
+
+        #voir-plus {
+            margin-top: 0;
+            font-size: 1.5em;
+        } 
+    }/*Fin média query mobile*/
+
+    /* Début de styles tablette */
+    @media (min-width:520px) and (max-width:960px) {
+        .profs {
+            grid-template-columns: 1fr;
+            margin: 2em 0 1vh 0em;
+        }
+
+        .menu-deroulant {
+            display: flex;
+            justify-content: center;
+        }
+
+        #menu-profs {
+            display: none;
+        }
+        
+        #voir-plus {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+    }/*Fin média query tablette*/
+}

@@ -1,0 +1,113 @@
+#splash {
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .conteneur {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+        transform-style: preserve-3d;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .conteneur .boite {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        transform-style: preserve-3d;
+    }
+
+    .conteneur .boite .boite-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .conteneur .boite .boite-de-contenu {
+        position: absolute;
+        transform-origin: top;
+        transition: 0.5s;
+        transform-style: preserve-3d;
+        scale: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .conteneur .boite .boite-de-contenu1 {
+        position: absolute;
+        transform-origin: top;
+        transition: 0.5s;
+        transform-style: preserve-3d;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .conteneur .boite:hover .boite-de-contenu {
+        transform:  translateZ(20px) scaleY(1); 
+    }
+
+    video {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100vh;
+        z-index: -1;
+    }
+
+    .TIM {
+        width: 25%;
+        margin: 40vh 0;
+    }
+
+    button {
+        position: absolute;
+        right: 17vw;
+        top: 70vh;
+        background-color: #050014;
+        border: 3px solid #fff;
+        color: white;
+        padding: 1.5% 3%;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1em;
+        font-family: $police__B612-mono;
+        text-transform: uppercase;  
+        display: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border: 3px solid #FE781D;
+        }
+    }
+
+    .apparaitre {
+        display: block;
+    }
+
+    @media (max-width:520px) {
+        button {
+            right: 36vw; 
+        }
+    }
+}

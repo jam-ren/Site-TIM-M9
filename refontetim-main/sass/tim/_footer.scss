@@ -1,0 +1,42 @@
+#lignes_footer{
+    display: block;
+}
+
+footer {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+
+    nav {
+        font-family: $police__icones;
+    }
+
+    li {
+        height: 8vh;
+        line-height: 8vh;
+    }
+
+    a {
+        color: $couleur__bleu-fonce;
+        font-size: 1.5em;
+        margin-right: 1vw;
+    }
+
+    img {
+        width: 4em;
+        bottom: 0;
+        cursor: pointer;
+        margin-right: 1vw;
+    }
+
+    .img-icone {
+        width: 1.1em;
+    }
+
+    p {
+        padding-bottom: 5vh;
+    }
+   
+    padding: 10vh 0;
+}

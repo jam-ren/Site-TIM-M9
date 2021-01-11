@@ -1,0 +1,143 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #fff;
+    background: linear-gradient(180deg, rgba(5,0,20,1) 0%, rgba(119,107,207,1) 100%);
+    font-family: $police__roboto-condensed;
+    font-size: 16px;
+    overflow: visible;
+}
+
+#conteneur {
+    width: 90vw;
+    margin: 0 auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+::selection {
+    color: $couleur__bleu-fonce;
+    background: $couleur__jaune;
+}
+
+.cacher {
+    display: none !important;
+}
+
+// Pour sections cours et profs
+.visage-logo {
+    position: relative;
+    top: 0;
+    left: 0; 
+
+    .visage-prof {
+        border-radius: 50%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    .logo-profs {
+        background-color: $couleur__jaune;
+        border-radius: 50%;
+        padding: 1%;
+        width: 40%;
+        position: absolute;
+        margin-top: 70%;
+        z-index:99;
+    }
+}
+
+// ------------menu déroulant---------------
+.menu-deroulant {
+    position: relative;
+    display: none;
+    text-transform: uppercase;
+    margin-top: 2em;
+
+    .btn-deroulant {
+        background-color:Transparent;
+        color: white;
+        padding: 1em;
+        font-size: .8em;
+        border: 1px solid white;
+        cursor: pointer;
+        text-transform: uppercase;
+        position: relative;
+        padding-right: 1.5em;
+        width: 135px;
+
+        &::after {
+            display: block;
+            font-family: "icones";
+            content: '\e907';
+            position: absolute;
+            top: 30%;
+            right : 0.4em;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .btn-deroulant.actif::after {
+        display: block;
+        font-family: "icones";
+        content: '\e906';
+        position: absolute;
+        top: 30%;
+        right : 0.4em;
+    }
+
+    .contenu-deroulant {
+        display: inline-block;
+        top: 2.7em;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        width: 135px;
+        text-align: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        li {
+            color: black;
+            padding: .9em 1.3em;
+            text-decoration: none;
+            display: block;
+            font-size: .8em;
+            
+            &:hover {
+                background-color: $couleur__jaune;
+            }
+        }
+    }
+}
+
+@media (max-width:520px) {
+    .titre-section {
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+}
+

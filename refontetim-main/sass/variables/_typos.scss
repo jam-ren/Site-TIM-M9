@@ -1,0 +1,10 @@
+// import les google fonts
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&family=B612:wght@700&family=Roboto+Condensed:wght@400;700&display=swap');
+@font-face {
+    font-family: "icones";
+    src: url(../police/icomoon.ttf);
+}
+$police__B612-regular: 'B612', sans-serif;
+$police__B612-mono: 'B612 Mono', monospace;
+$police__roboto-condensed: 'Roboto Condensed', sans-serif;
+$police__icones: 'icones';

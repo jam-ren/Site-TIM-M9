@@ -1,0 +1,327 @@
+#cours {
+    padding-top: 10vh;
+
+    .titre-section {
+        display: flex;
+        justify-content: start;
+        height: 3em;
+        line-height: 3em;
+
+        h1 {
+            font-family: $police__B612-regular;
+            font-weight: 700;
+            color: $couleur__orange;
+            text-transform: uppercase;
+            margin: .5em auto;
+        }
+
+        hr {
+            border: 1px solid $couleur__orange;
+            width: 90%;
+            height: 0;
+            margin:  2.1em 0 0 2em;
+        }
+    }
+
+    ul {
+        font-family: $police__B612-mono;
+        text-transform: uppercase;
+        font-size: .8em;
+
+        li {
+            padding-right: 3vw;
+            margin-top: 2vh;
+            opacity: .85;
+
+            &:hover {
+                opacity: 1;
+                font-weight: 700;
+                transition: 0.5s;
+                cursor: pointer;
+                color: $couleur__orange;
+            }
+        }
+
+        .session-active {
+            font-weight: 700;
+            transition: .5s;
+            opacity: 1;
+            color: $couleur__jaune;
+        }
+    }
+
+    .les-cours {
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        margin: 8vh auto;
+
+        .un-cours {
+            transition: .5s;
+            width: 95%;
+            padding: 1vh 1vw;
+            margin: 2vh;
+
+            .titre-cours {
+                display: flex;
+                justify-content: start;
+                height: 10vh;
+                font-size: 1em;
+
+                .logo-cours {
+                    background-color: $couleur__jaune;
+                    border-radius: 50%;
+                    padding: 2%;
+                    height: 100%;
+                    box-shadow: -3px 5px 20px 0.5px rgba(0, 0, 0, 0.25);
+                }
+    
+                h2 {
+                    text-transform: uppercase;
+                    margin: 0;
+                    padding-top: 5px;
+                    margin-left: 1vw;
+
+                    &:hover {
+                        color: $couleur__jaune;
+                        cursor: pointer;
+                        transition: .5s;
+                    }
+                }
+            }
+
+            .details-cours {
+                .ponderation,
+                .prealables {
+                    font-weight: 700;
+                }
+
+                h3 {
+                    text-transform: uppercase;
+                }
+
+                ul {
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        font-family: $police__roboto-condensed;
+                        color: #fff;
+                        opacity: 1;
+                        font-size: 16px;
+                        margin: 0;
+                        text-transform: none;
+
+                        &:hover {
+                            font-weight: 500;
+                            cursor: initial;
+                        }
+                    }
+                }
+
+                .prof-qui-enseigne {
+                    margin-top: 5vh;
+                    width: 100%;
+
+                    .prof-cours {
+                        display: flex;
+                        justify-content: start;
+                        padding: 2vh 2vw 2vh 0;
+
+                        .visage-prof {
+                            box-shadow: -3px 5px 20px 0.5px rgba(0, 0, 0, 0.25);
+                        }
+        
+                        .desc-prof-cours {
+                            margin-left: 1vw;
+        
+                            h5 {
+                                text-transform: uppercase;
+                                font-size: 1.1em;
+                                margin: 0;
+                            }
+        
+                            h6 {
+                                font-weight: 500;
+                                color: $couleur__jaune;
+                                font-size: .9em;
+                                margin: 1vh 1vw 1vh 0;
+                            }
+        
+                            p {
+                                font-size: .85em;
+                            }
+                        }
+                    }
+                }
+
+                .projets {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+
+                    img {
+                        width: 100%;
+                        box-shadow: -3px 5px 20px 0.5px rgba(0, 0, 0, 0.25);
+                    }
+                }
+            } 
+        }
+
+        .couleur-BG {
+            background-color: $couleur__bleu-pale;
+        }
+    }
+
+    .grille-cheminement {
+        width: 100%;
+
+        h2 {
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            margin-top: 15vh;
+
+            a {
+                color: #FFF;
+            }
+        }
+
+        svg {
+            position: relative;
+            left: 38%;
+            bottom: 80px;
+            z-index: -1;
+        }
+
+        .lightbox {
+            display: none;
+
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 1vh 1vw;
+
+            background: rgba(0,0,0,0.8);
+
+            &:target {
+                display: block;
+            }
+
+            #img-grille-cheminement {
+                background-image: url("../medias/cours/grilleCheminement.png");
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+        
+    }
+
+    // Media query : tablette
+    @media (min-width:521px) and (max-width:960px) {
+        .menu-deroulant{
+            display: flex;
+            justify-content: center;
+        }
+
+        #filtre-sessions {
+            display: none;
+        }
+
+        .les-cours {
+            grid-template-columns: 1fr;
+
+            .un-cours {
+                .titre-cours {
+                    height: 10vh;
+                    font-size: 1em;
+
+                    h2 {
+                        padding-top: 10px;
+                    }
+                }
+            }
+
+            .projets {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+    }
+
+    // Media query : mobile
+    @media (max-width:520px) {
+        .menu-deroulant{
+            display: flex;
+            justify-content: center;
+        }
+
+        #filtre-sessions {
+            display: none;
+        }
+
+        .les-cours {
+            grid-template-columns: 1fr;
+
+            .un-cours {
+                padding: 2vh 2vw;
+
+                .titre-cours {
+                    height: 8vh;
+        
+                    h2 {
+                        font-size: 1.2em;
+                        padding-top: 5px;
+                        margin-left: 2vw;
+                    }
+                }
+    
+                .details-cours {
+                    h3 {
+                        text-transform: uppercase;
+                    }
+
+                    p {
+                        font-size: .95em;
+                    }
+
+                    .prof-cours {        
+                        .desc-prof-cours {
+                            margin-left: 2vw;
+        
+                            h5 {
+                                font-size: 1.1em;
+                            }
+        
+                            p {
+                                font-size: .85em;
+                            }
+                        }
+                    }
+                } 
+            }
+
+            .projets {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .grille-cheminement {
+            svg {
+                position: relative;
+                left: 10%;
+                bottom: 80px;
+                z-index: -1;
+                width: 75%;
+            }
+        }
+        
+    }
+}
